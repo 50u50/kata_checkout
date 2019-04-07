@@ -63,6 +63,7 @@ class QtyFixedDiscounter implements DiscounterInterface
         }
         /** with threshold = 2 and qty = 7, discount should be applied 3 times (cnt = 3) */
         $cnt = (int)($discountable->getQty() / $this->qtyThreshold);
+        /** @todo previous discount value is overwritten, check requirements */
         $discountable->setDiscount($cnt * $this->discountValue);
         return $this;
     }
